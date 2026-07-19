@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://primeeventudaipur.com"),
+  metadataBase: new URL("https://prime-event-mauve.vercel.app"),
 
   title: {
     default: "Prime Event Udaipur | Luxury Wedding & Event Planner",

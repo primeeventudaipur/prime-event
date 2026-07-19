@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://primeeventudaipur.com";
+  const baseUrl = "https://prime-event-mauve.vercel.app";
 
   return [
     {

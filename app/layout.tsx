@@ -5,6 +5,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Script from "next/script";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -115,6 +116,21 @@ return (
     className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
   >
     <body className="min-h-full flex flex-col bg-black text-white overflow-x-hidden">
+
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-BQ08LB9MZ8"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BQ08LB9MZ8');
+  `}
+</Script>
 
       <Script
         id="schema"

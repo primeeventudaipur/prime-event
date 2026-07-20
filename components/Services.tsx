@@ -80,7 +80,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 bg-black">
+    <section className="min-h-[110vh] flex items-center py-32 bg-black">
       <div className="container mx-auto px-6">
         <div className="text-center mb-10">
           <span className="text-yellow-500 uppercase tracking-[6px] text-sm">
@@ -99,11 +99,11 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative flex flex-col h-full overflow-hidden rounded-3xl p-10
+              className="group relative flex flex-col h-full overflow-hidden rounded-3xl p-12
               bg-white/5 backdrop-blur-md
               border border-yellow-500/20
               hover:border-yellow-400

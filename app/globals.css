@@ -244,3 +244,52 @@ body{
 .fade-up{
   animation:fadeUp .8s ease both;
 }
+
+/* ========================= */
+/* PREMIUM DESIGN SYSTEM */
+/* ========================= */
+
+section {
+  position: relative;
+}
+
+.section-padding {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+
+.section-title {
+  font-size: clamp(2.7rem, 6vw, 4.8rem);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.section-subtitle {
+  max-width: 760px;
+  margin: 1.8rem auto 0;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: rgb(156 163 175);
+}
+
+.container-premium {
+  width: min(1280px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.card-spacing {
+  padding: 2rem;
+}
+
+@media (max-width:768px){
+
+.section-padding{
+padding-top:5rem;
+padding-bottom:5rem;
+}
+
+.section-title{
+font-size:2.5rem;
+}
+
+}

@@ -7,119 +7,187 @@ import Counter from "./Counter";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative h-[100vh] min-h-[400px] overflow-hidden">
 
       {/* Background */}
+
       <motion.div
-        initial={{ scale: 1.15 }}
+        initial={{ scale: 1.08 }}
         animate={{ scale: 1 }}
         transition={{
           duration: 8,
           ease: "easeOut",
         }}
-        className="absolute inset-0 hero-bg bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.62)), url('/images/hero.webp')",
+            "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.72)),url('/images/hero.webp')",
         }}
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/20" />
+      {/* Overlay */}
 
-      {/* Hero Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/20"></div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center px-6 max-w-5xl"
-        >
+      {/* Content */}
 
-          <span className="inline-block -translate-y-6 border border-yellow-500/40 text-yellow-400 px-5 py-2 rounded-full text-sm tracking-[3px] uppercase backdrop-blur-sm">
-            Luxury Wedding & Event Planner • Udaipur
-          </span>
+      <div className="relative z-10 flex h-full">
 
-          <h1 className="mt-7 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
-            Crafting
-            <span className="block text-yellow-400">
-              Timeless Celebrations
-            </span>
-          </h1>
+        <div className="mx-auto flex w-full max-w-7xl items-center px-6">
 
-          <p className="mt-8 text-lg md:text-xl text-gray-300 leading-9 max-w-3xl mx-auto">
-            From royal destination weddings to premium corporate events,
-            Prime Event transforms your vision into unforgettable memories
-            with elegance, creativity and flawless execution.
-          </p>
-
-          {/* Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.4,
-              duration: 0.8,
-            }}
-            className="mt-8 flex flex-col sm:flex-row justify-center gap-5"
+            transition={{ duration: 1 }}
+            className="max-w-4xl"
           >
 
-            <Link
-              href="/contact"
-              className="bg-yellow-500 text-black font-semibold px-9 py-4 rounded-full hover:bg-yellow-400 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-yellow-500/40"
+            {/* Badge */}
+
+            <span
+              className=" relative -top-4 inline-flex w-[550px] h-13 px-6 translate-x-8 items-center justify-center rounded-full border border-yellow-500/50 bg-black/30 text-base uppercase tracking-[3px] text-yellow-500 backdrop-blur-md"
+              >
+                Luxury Wedding & Event Planner • Udaipur
+                </span>
+
+            {/* Heading */}
+
+            <h1 className="mt-9 text-4xl translate-x-7 font-black tracking-x-5 leading-[1.1] text-white md:text-6xl xl:text-7xl">
+
+              Crafting
+
+              <span className="mt-3 block text-yellow-400">
+
+                Timeless Celebrations
+
+              </span>
+
+            </h1>
+
+            {/* Description */}
+
+            <p className="mt-8 mb-20 translate-x-10 max-w-2xl text-lg md:text-xl leading-9 text-gray-300">
+
+              Prime Event creates unforgettable destination weddings,
+              luxury celebrations and premium corporate events with
+              elegant décor, flawless planning and world-class execution.
+
+            </p>
+     
+
+            {/* Buttons */}
+
+            <motion.div
+  initial={{ opacity: 0, y: 25 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    delay: 0.4,
+    duration: 0.8,
+  }}
+  className="relative top-7 flex flex-wrap gap-5"
+>
+
+           <Link
+            href="/contact"
+            className="mt-12 relative inline-flex h-11 w-[200px] px-10 translate-x-8 items-center justify-center rounded-full border border-yellow-500 py-5 font-semibold text-yellow-400 transition-all duration-300 hover:scale-105 hover:bg-yellow-500 hover:text-black"
             >
-              Book Consultation
+            Book Consultation
             </Link>
 
             <Link
-              href="/gallery"
-              className="border border-yellow-500 text-yellow-400 px-9 py-4 rounded-full hover:bg-yellow-500 hover:text-black hover:scale-105 transition-all duration-300"
-            >
-              View Gallery
-            </Link>
+           href="/gallery"
+           className="mt-12 relative inline-flex h-11 px-10 w-[200px] translate-x-18 items-center justify-center rounded-full border border-yellow-500 px-10 py-5 font-semibold text-yellow-400 transition-all duration-300 hover:scale-105 hover:bg-yellow-500 hover:text-black"
+           >
+          View Gallery
+           </Link>
+
+           </motion.div>
+
+            {/* Floating Premium Stats */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.7,
+                duration: 0.8,
+              }}
+              className="absolute left-1/2 bottom-6 w-[92%] max-w-6xl -translate-x-1/2"
+             >
+
+              <div className="grid grid-cols-2 md:grid-cols-4 rounded-[30px] border border-white/10 bg-black/45 backdrop-blur-xl overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,.45)]">
+
+                <div className="py-8 text-center border-b md:border-b-0 md:border-r border-white/10">
+
+                  <h3 className="text-4xl font-bold text-yellow-400">
+                    <Counter end={500} suffix="+" />
+                  </h3>
+
+                  <p className="mt-3 text-gray-300">
+                    Events Completed
+                  </p>
+
+                </div>
+
+                <div className="py-8 text-center border-b md:border-b-0 md:border-r border-white/10">
+
+                  <h3 className="text-4xl font-bold text-yellow-400">
+                    <Counter end={200} suffix="+" />
+                  </h3>
+
+                  <p className="mt-3 text-gray-300">
+                    Luxury Weddings
+                  </p>
+
+                </div>
+
+                <div className="py-8 text-center border-r border-white/10">
+
+                  <h3 className="text-4xl font-bold text-yellow-400">
+                    4.9★
+                  </h3>
+
+                  <p className="mt-3 text-gray-300">
+                    Google Rating
+                  </p>
+
+                </div>
+
+                <div className="py-8 text-center">
+
+                  <h3 className="text-4xl font-bold text-yellow-400">
+                    <Counter end={10} suffix="+" />
+                  </h3>
+
+                  <p className="mt-3 text-gray-300">
+                    Years Experience
+                  </p>
+
+                </div>
+
+              </div>
+
+            </motion.div>
 
           </motion.div>
 
-          {/* Stats */}
-          <div className="mt-12 flex flex-wrap justify-center gap-10 text-gray-300">
-
-            <div>
-              <h3 className="text-yellow-400 text-3xl font-bold">
-                <Counter end={500} suffix="+" />
-              </h3>
-              <p className="text-sm mt-2">
-                Events Completed
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-yellow-400 text-3xl font-bold">
-                4.9★
-              </h3>
-              <p className="text-sm mt-2">
-                Client Rating
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-yellow-400 text-3xl font-bold">
-                <Counter end={8} suffix="+" />
-              </h3>
-              <p className="text-sm mt-2">
-                Years Experience
-              </p>
-            </div>
-
-          </div>
-
-        </motion.div>
+        </div>
 
       </div>
 
-      {/* Scroll Down */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-yellow-400">
-        <FaArrowDown size={22} />
+      {/* Bottom Gradient */}
+
+      <div className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+
+      {/* Scroll Indicator */}
+
+      <div className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 animate-bounce">
+
+        <FaArrowDown
+          size={24}
+          className="text-yellow-400"
+        />
+
       </div>
 
     </section>

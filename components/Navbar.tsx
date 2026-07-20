@@ -40,18 +40,18 @@ const [menuOpen, setMenuOpen] = useState(false);
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 lg:px-12 py-6">
 
         {/* Logo */}
         <Link
           href="/"
-          className="text-3xl font-bold tracking-wide text-yellow-400 hover:text-yellow-300 transition"
+          className="text-4xl font-bold tracking-wide text-yellow-400 hover:text-yellow-300 transition"
         >
           PRIME EVENT
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
 
           {navLinks.map((item) => (
             <Link
@@ -72,7 +72,7 @@ const [menuOpen, setMenuOpen] = useState(false);
         {/* Book Button */}
 <Link
   href="/contact"
-  className="hidden lg:block bg-yellow-500 text-black px-7 py-3 rounded-full font-semibold hover:bg-yellow-400 hover:scale-105 transition duration-300"
+  className="hidden lg:block bg-yellow-500 text-black px-8 py-3.5 rounded-full font-semibold hover:bg-yellow-400 hover:scale-105 transition duration-300"
 >
   Book Now
 </Link>

@@ -2,7 +2,7 @@ import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 export default function CTA() {
   return (
-    <section className="items-center relative flex min-h-[110vh] items-center justify-center overflow-hidden bg-black px-6 py-20">
+    <section className="section-padding items-center relative flex min-h-[110vh] items-center justify-center overflow-hidden bg-black px-6 py-20">
 
       {/* Cinematic Background */}
       <div className="absolute inset-0">
@@ -28,7 +28,7 @@ export default function CTA() {
         <div className="translate-x-16 items-center mx-auto w-full max-w-[1100px] rounded-[48px] border border-yellow-500/20 bg-white/[0.04] px-8 h-[470px] shadow-[0_35px_120px_rgba(0,0,0,.45)] backdrop-blur-2xl hover:border-yellow-400/40 hover:shadow-[0_40px_120px_rgba(234,179,8,.12)]">
 
           {/* Inner Container */}
-          <div className="mx-auto mt-8 flex max-w-5xl flex-col items-center text-center">
+          <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
 
             {/* Small Label */}
 

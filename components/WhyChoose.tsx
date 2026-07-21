@@ -54,7 +54,7 @@ const data = [
 
 export default function WhyChoose() {
   return (
-    <section className="relative py-24 bg-[#0d0d0d] overflow-hidden">
+    <section className="section-padding relative py-24 bg-[#0d0d0d] overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.12),transparent_45%)]" />
 
       <div className="container mx-auto px-6 relative z-10">

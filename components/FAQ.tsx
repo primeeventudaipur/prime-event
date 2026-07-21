@@ -43,7 +43,7 @@ export default function FAQ({
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative overflow-hidden bg-black pt-44 pb-32">
+    <section className=" section-padding flex items-center justify-center relative overflow-hidden bg-black pt-44 pb-32">
 
 
       {/* Background Glow */}
@@ -58,19 +58,19 @@ export default function FAQ({
 
         <Reveal>
 
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="gap-3 relative mx-auto flex max-w-4xl flex-col items-center text-center">
 
-            <span className="rounded-full border border-yellow-500/30 bg-yellow-500/5 px-6 py-2 text-sm font-semibold uppercase tracking-[8px] text-yellow-400 backdrop-blur-md">
+             <span className="mt-8 flex w-[430px] h-[60px] whitespace-nowrap items-center justify-center rounded-full border border-yellow-500/30 bg-yellow-500/5 text-base font-semibold uppercase tracking-[5px] text-yellow-400 backdrop-blur-md">
 
-              Frequently Asked Questions
+            Frequently Asked Questions
 
-            </span>
+             </span>
 
-            <h2 className="mt-8 text-5xl font-black leading-[1.05] text-white md:text-6xl">
+            <h2 className="mt-16 mb-30 text-5xl font-black leading-[1.05] text-white md:text-6xl">
 
               Everything You Need
 
-              <span className="mt-2 block text-yellow-400">
+              <span className="mt-6 block text-yellow-400">
 
                 To Know
 
@@ -94,14 +94,14 @@ export default function FAQ({
 
         {/* FAQ Cards */}
 
-        <div className="mx-auto mt-24 max-w-[1100px] space-y-7">
+        <div className="mx-auto mt-26 max-w-[1100px] space-y-20">
         {faqs.map((faq, index) => (
-  <Reveal key={index}>
+          <Reveal key={index}>
 
-    <motion.div
+       <motion.div
       whileHover={{ y: -3 }}
       transition={{ duration: 0.3 }}
-      className={`overflow-hidden rounded-[28px] border backdrop-blur-xl transition-all duration-500 ${
+      className={`overflow-hidden mb-10 rounded-[15px] border backdrop-blur-xl transition-all duration-500 ${
         openIndex === index
           ? "border-yellow-500/50 bg-white/[0.05] shadow-[0_0_45px_rgba(234,179,8,.08)]"
           : "border-white/10 bg-white/[0.03] hover:border-yellow-500/30"
@@ -115,7 +115,7 @@ export default function FAQ({
           setOpenIndex(openIndex === index ? null : index)
         }
         className="flex w-full items-center justify-between px-8 py-7 text-left"
-      >
+         >
 
         <div className="flex items-center gap-5">
 
@@ -171,24 +171,23 @@ export default function FAQ({
                 {faq.answer}
 
               </p>
+          </div>
 
-            </div>
+                  </motion.div>
 
-          </motion.div>
+                 )}
 
-        )}
+                </AnimatePresence>
 
-      </AnimatePresence>
+                          </motion.div>
 
-    </motion.div>
+               </Reveal>
+               ))}
 
-  </Reveal>
-))}
+                      </div>
 
-        </div>
-
-      </div>
-
+                       </div>
+ 
     </section>
   );
 }

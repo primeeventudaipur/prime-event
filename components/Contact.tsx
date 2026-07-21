@@ -91,7 +91,7 @@ const [form, setForm] = useState({
 });
 
   return (
-    <section
+    <section className="section-padding"
       id="contact"
       className="py-28 bg-gradient-to-b from-[#0b0b0b] to-[#111]"
     >

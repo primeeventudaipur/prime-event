@@ -56,7 +56,7 @@ useEffect(() => {
 }, [selectedIndex]);
 
 return (
-    <section className="min-h-screen py-36 bg-gradient-to-b from-[#0b0b0b] to-black">
+    <section className="section-padding min-h-screen py-36 bg-gradient-to-b from-[#0b0b0b] to-black">
 
       <div className="container mx-auto px-6">
 

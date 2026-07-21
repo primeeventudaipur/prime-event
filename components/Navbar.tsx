@@ -127,7 +127,7 @@ const [menuOpen, setMenuOpen] = useState(false);
 {menuOpen && (
   <div
     onClick={() => setMenuOpen(false)}
-    className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+    className="sticky inset-0 bg-black/60 z-40 lg:hidden"
   />
 )}
 

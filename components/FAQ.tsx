@@ -1,161 +1,189 @@
 "use client";
 
 import { useState } from "react";
-import {
-  FaChevronDown,
-  FaChevronUp,
-  FaPhoneAlt,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import Reveal from "./Reveal";
 
 const faqs = [
   {
-    question: "Do you organize destination weddings across India?",
+    question: "How does your planning process work?",
     answer:
-      "Yes. Prime Event specializes in destination weddings across Udaipur, Jaipur, Jodhpur and many other locations in India. We manage everything from planning to flawless execution.",
+      "We begin with a detailed consultation to understand your vision, budget and preferences. From concept development to flawless execution, our team manages every detail while keeping you involved at every important step.",
   },
   {
-    question: "Can I customize my wedding package?",
+    question: "Do you specialize in destination weddings?",
     answer:
-      "Absolutely. Every wedding is unique, so we create fully customized packages according to your budget, theme, guest count and preferences.",
+      "Yes. We specialize in luxury destination weddings across Rajasthan and other premium locations, handling venue selection, décor, hospitality, logistics and guest management.",
   },
   {
-    question: "How early should I book Prime Event?",
+    question: "Can you customize every event?",
     answer:
-      "We recommend booking at least 3–6 months before your event to ensure the best venues, vendors and smooth planning.",
+      "Absolutely. Every celebration is uniquely designed to reflect your personality, traditions and vision. We never rely on one-size-fits-all concepts.",
   },
   {
-    question: "Do you provide decoration only?",
+    question: "How early should we book Prime Event?",
     answer:
-      "Yes. We provide luxury wedding decoration services separately as well as complete event planning solutions.",
+      "We recommend booking 6–12 months in advance for weddings and at least 2–3 months before other events to ensure the best planning experience.",
   },
   {
-    question: "Do you arrange photography & videography?",
+    question: "Do you handle décor, entertainment and hospitality?",
     answer:
-      "Yes. We offer premium photography, cinematic videography, drone shoots, reels and complete wedding films.",
-  },
-  {
-    question: "Do you provide catering services?",
-    answer:
-      "Yes. We work with experienced catering partners offering delicious multi-cuisine menus for every type of event.",
+      "Yes. Our team manages décor, entertainment, hospitality, guest experiences, vendor coordination and complete event execution under one roof.",
   },
 ];
 
-export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
+type FAQProps = {
+  standalone?: boolean;
+};
+
+export default function FAQ({
+  standalone = false,
+}: FAQProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-28 bg-gradient-to-b from-[#0d0d0d] to-black">
+    <section className="relative overflow-hidden bg-black pt-44 pb-32">
 
-      <div className="container mx-auto px-6">
 
-        {/* Heading */}
+      {/* Background Glow */}
 
-        <div className="text-center mb-16">
+      <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/10 blur-[220px]" />
 
-          <span className="uppercase tracking-[6px] text-yellow-500 text-sm">
-            FAQ
-          </span>
+      <div className="absolute -left-40 top-20 h-[350px] w-[350px] rounded-full bg-yellow-500/5 blur-[150px]" />
 
-          <h2 className="text-5xl lg:text-6xl font-bold mt-4">
-            Frequently Asked
-            <span className="text-yellow-500"> Questions</span>
-          </h2>
+      <div className="absolute -right-40 bottom-20 h-[350px] w-[350px] rounded-full bg-yellow-500/5 blur-[150px]" />
 
-          <p className="text-gray-400 mt-6 max-w-3xl mx-auto leading-8">
-            Here are answers to some of the most common questions our
-            clients ask before booking their dream wedding or event.
-          </p>
+      <div className="relative z-10 mx-auto max-w-7xl px-8">
 
-        </div>
+        <Reveal>
 
-        {/* FAQ */}
+          <div className="mx-auto max-w-4xl text-center">
 
-        <div className="max-w-4xl mx-auto">
+            <span className="rounded-full border border-yellow-500/30 bg-yellow-500/5 px-6 py-2 text-sm font-semibold uppercase tracking-[8px] text-yellow-400 backdrop-blur-md">
 
-          {faqs.map((item, index) => (
+              Frequently Asked Questions
 
-            <div
-              key={index}
-              className="mb-5 rounded-2xl border border-yellow-500/20 bg-[#171717] overflow-hidden transition hover:border-yellow-500"
-            >
+            </span>
 
-              <button
-                onClick={() =>
-                  setOpen(open === index ? null : index)
-                }
-                className="w-full flex justify-between items-center px-7 py-6 text-left"
-              >
+            <h2 className="mt-8 text-5xl font-black leading-[1.05] text-white md:text-6xl">
 
-                <span className="text-lg md:text-xl font-semibold">
-                  {item.question}
-                </span>
+              Everything You Need
 
-                <span className="text-yellow-500 text-xl">
+              <span className="mt-2 block text-yellow-400">
 
-                  {open === index ? (
-                    <FaChevronUp />
-                  ) : (
-                    <FaChevronDown />
-                  )}
+                To Know
 
-                </span>
+              </span>
 
-              </button>
+            </h2>
 
-              {open === index && (
+            <div className="mx-auto mt-8 h-[2px] w-28 rounded-full bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
 
-                <div className="px-7 pb-6 text-gray-400 leading-8 border-t border-yellow-500/10">
+            <p className="mx-auto mt-10 max-w-3xl text-lg leading-9 text-gray-300">
 
-                  {item.answer}
+              We understand that planning a luxury celebration comes with
+              many questions. Here are answers to the most common queries
+              our clients ask before beginning their journey with Prime Event.
 
-                </div>
+            </p>
 
-              )}
+          </div>
 
-            </div>
+        </Reveal>
 
-          ))}
+        {/* FAQ Cards */}
 
-        </div>
+        <div className="mx-auto mt-24 max-w-[1100px] space-y-7">
+        {faqs.map((faq, index) => (
+  <Reveal key={index}>
 
-        {/* Bottom CTA */}
+    <motion.div
+      whileHover={{ y: -3 }}
+      transition={{ duration: 0.3 }}
+      className={`overflow-hidden rounded-[28px] border backdrop-blur-xl transition-all duration-500 ${
+        openIndex === index
+          ? "border-yellow-500/50 bg-white/[0.05] shadow-[0_0_45px_rgba(234,179,8,.08)]"
+          : "border-white/10 bg-white/[0.03] hover:border-yellow-500/30"
+      }`}
+    >
 
-        <div className="text-center mt-20">
+      {/* Question */}
 
-          <h3 className="text-3xl font-bold mb-4">
+      <button
+        onClick={() =>
+          setOpenIndex(openIndex === index ? null : index)
+        }
+        className="flex w-full items-center justify-between px-8 py-7 text-left"
+      >
 
-            Still Have Questions?
+        <div className="flex items-center gap-5">
+
+          <div
+            className={`h-10 w-1 rounded-full transition-all duration-300 ${
+              openIndex === index
+                ? "bg-yellow-500"
+                : "bg-transparent"
+            }`}
+          />
+
+          <h3 className="text-xl font-semibold text-white">
+
+            {faq.question}
 
           </h3>
 
-          <p className="text-gray-400 mb-8">
+        </div>
 
-            Our team is always ready to help you plan your perfect celebration.
+        <div
+          className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 ${
+            openIndex === index
+              ? "border-yellow-500 bg-yellow-500 text-black"
+              : "border-white/20 text-yellow-400"
+          }`}
+        >
+          {openIndex === index ? <FaMinus /> : <FaPlus />}
+        </div>
 
-          </p>
+      </button>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-5">
+      {/* Answer */}
 
-            <a
-              href="tel:+919876543210"
-              className="flex items-center justify-center gap-3 bg-yellow-500 text-black font-semibold px-8 py-4 rounded-full hover:scale-105 transition duration-300"
-            >
-              <FaPhoneAlt />
-              Call Now
-            </a>
+      <AnimatePresence initial={false}>
 
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 border border-yellow-500 text-yellow-500 px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-black transition duration-300"
-            >
-              <FaWhatsapp />
-              WhatsApp Us
-            </a>
+        {openIndex === index && (
 
-          </div>
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{
+              duration: 0.35,
+              ease: "easeInOut",
+            }}
+            className="overflow-hidden"
+          >
+
+            <div className="border-t border-yellow-500/10 px-14 pb-8 pt-7">
+
+              <p className="leading-9 text-gray-300">
+
+                {faq.answer}
+
+              </p>
+
+            </div>
+
+          </motion.div>
+
+        )}
+
+      </AnimatePresence>
+
+    </motion.div>
+
+  </Reveal>
+))}
 
         </div>
 
@@ -164,3 +192,4 @@ export default function FAQ() {
     </section>
   );
 }
+      

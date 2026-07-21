@@ -189,7 +189,9 @@ return (
 
       <Navbar />
 
-      {children}
+<main className="pt-28">
+  {children}
+</main>
 
     </body>
   </html>

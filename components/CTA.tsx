@@ -2,69 +2,100 @@ import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 export default function CTA() {
   return (
-    <section className="relative py-28 overflow-hidden bg-gradient-to-r from-[#0b0b0b] via-[#171717] to-[#0b0b0b]">
+    <section className="items-center relative flex min-h-[110vh] items-center justify-center overflow-hidden bg-black px-6 py-20">
 
-      {/* Background Glow */}
-      <div className="absolute w-[500px] h-[500px] bg-yellow-500/10 rounded-full blur-[120px] -top-32 -left-20"></div>
-      <div className="absolute w-[450px] h-[450px] bg-yellow-500/10 rounded-full blur-[120px] bottom-0 -right-20"></div>
+      {/* Cinematic Background */}
+      <div className="absolute inset-0">
 
-      <div className="container mx-auto px-6 relative z-10">
+        {/* Luxury Glow */}
+        <div className="absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/10 blur-[220px]" />
 
-        <div className="max-w-4xl mx-auto text-center">
+        {/* Left Glow */}
+        <div className="absolute -left-48 top-24 h-[500px] w-[500px] rounded-full bg-yellow-500/5 blur-[180px]" />
 
-          <span className="uppercase tracking-[6px] text-yellow-500 text-sm">
-            Book Your Event
-          </span>
+        {/* Right Glow */}
+        <div className="absolute -right-48 bottom-20 h-[500px] w-[500px] rounded-full bg-yellow-500/5 blur-[180px]" />
 
-          <h2 className="text-5xl lg:text-6xl font-bold mt-6 leading-tight">
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#090909] to-black" />
 
-            Let's Create Your
+      </div>
 
-            <span className="text-yellow-500"> Dream Celebration</span>
+      {/* Content */}
+      <div className="items-center relative z-10 w-full max-w-7xl">
 
-          </h2>
+        {/* Luxury Glass Card */}
+        <div className="translate-x-16 items-center mx-auto w-full max-w-[1100px] rounded-[48px] border border-yellow-500/20 bg-white/[0.04] px-8 h-[470px] shadow-[0_35px_120px_rgba(0,0,0,.45)] backdrop-blur-2xl hover:border-yellow-400/40 hover:shadow-[0_40px_120px_rgba(234,179,8,.12)]">
 
-          <p className="text-gray-300 text-lg mt-8 leading-8">
+          {/* Inner Container */}
+          <div className="mx-auto mt-8 flex max-w-5xl flex-col items-center text-center">
 
-            From intimate weddings to grand destination celebrations,
-            Prime Event transforms your dreams into unforgettable memories
-            with creativity, elegance, and flawless execution.
+            {/* Small Label */}
 
-          </p>
+            <span className="w-[300px] flex items-center justify-center translate-y-1 rounded-full border border-yellow-500/30 bg-yellow-500/5 px-16 py-2 text-base font-semibold uppercase tracking-[8px] text-yellow-400 backdrop-blur-md">
 
-          {/* Buttons */}
+              Book Your Event
 
-          <div className="flex flex-col sm:flex-row justify-center gap-5 mt-12">
+            </span>
 
-            <button className="flex items-center justify-center gap-3 bg-yellow-500 text-black font-semibold px-8 py-4 rounded-full hover:scale-105 transition duration-300 shadow-lg hover:shadow-yellow-500/40">
+            {/* Heading */}
 
-              <FaPhoneAlt />
+            <h2 className="mt-10 text-5xl font-black leading-[1.05] text-white md:text-6xl xl:text-7xl">
 
-              Book Free Consultation
+              Let's Create Your
 
-            </button>
+              <span className="mt-2 block text-yellow-400">
 
-            <button className="flex items-center justify-center gap-3 border border-yellow-500 text-yellow-500 px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-black transition duration-300">
+                Dream Celebration
 
-              <FaWhatsapp />
+              </span>
 
-              Chat on WhatsApp
+            </h2>
 
-            </button>
+            {/* Description */}
 
-          </div>
+            <p className="translate-y-3 mt-10 max-w-3xl text-xl leading-10 text-gray-300">
 
-          {/* Trust Text */}
+              Every unforgettable celebration begins with a conversation.
+              Whether you are planning a luxury destination wedding, corporate event,
+              our team is ready to transform your vision into reality.
 
-          <div className="mt-12 flex flex-wrap justify-center gap-8 text-gray-400 text-sm">
+            </p>
 
-            <span>✔ Free Consultation</span>
+            {/* Luxury Divider */}
 
-            <span>✔ Customized Planning</span>
+            <div className="translate-y-3 mt-12 h-[2px] w-32 rounded-full bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
 
-            <span>✔ Luxury Decoration</span>
+            {/* ---------- PART 2 STARTS FROM HERE ---------- */}
+                        {/* Buttons */}
 
-            <span>✔ 500+ Successful Events</span>
+            <div className="translate-y-4 mt-16 flex flex-col items-center justify-center gap-6 sm:flex-row">
+
+              <button className="group inline-flex min-h-[68px] w-[270px] items-center justify-center gap-4 rounded-full bg-yellow-500 px-10 text-lg font-semibold text-black shadow-[0_20px_60px_rgba(234,179,8,.25)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:bg-yellow-400 hover:shadow-[0_25px_80px_rgba(234,179,8,.45)]">
+
+                <FaPhoneAlt className="transition-transform duration-300 group-hover:rotate-12" />
+
+                Schedule Consultation
+
+              </button>
+
+              <button className="group inline-flex min-h-[68px] w-[270px] items-center justify-center gap-4 rounded-full border border-yellow-500/60 bg-transparent px-10 text-lg font-semibold text-yellow-400 transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black">
+
+                <FaWhatsapp className="text-xl transition-transform duration-300 group-hover:scale-110" />
+
+                WhatsApp Now
+
+              </button>
+
+            </div>
+
+            {/* Bottom Text */}
+
+            <p className="translate-y-6 mt-14 max-w-2xl text-base leading-8 text-gray-500">
+
+              Let's create something unforgettable together.
+
+            </p>
 
           </div>
 

@@ -20,7 +20,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
 
-      <Hero />
+      <div className="-mt-28">
+  <Hero />
+</div>
 
       <About />
 
